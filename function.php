@@ -4,7 +4,7 @@
 Plugin Name: Yetinc Short Code
 Plugn URL : https://yetinc.ch 
 Description: Ajoute des shortcodes personnalisés pour Woocommmerce et Wordpress et l'affichage de ses données
-Version: 1.1
+Version: 1.1.1
 Author: Yetinc Sàrl
 Author URI: https://yetinc.ch 
 Update URI: https://yetinc.ch 
@@ -33,5 +33,5 @@ function afficher_nom_categorie_actuelle() {
     echo  $cat_name;
 }
  
-// Ajouter le shortcode pour afficher le nom de la catégorie
+// Ajouter le shortcode pour afficher le nom de la catégorie 
 add_shortcode('afficher_categorie', 'afficher_nom_categorie_actuelle');
