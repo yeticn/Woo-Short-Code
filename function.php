@@ -80,4 +80,17 @@ return $returnValue;
 function round_price_product( $price ){
 // Return rounded price
 return round( $price * 2, 1 ) / 2;
+
+// Fonction pour afficher l'année actuelle
+function afficher_copyright_annee() {
+    // Récupérer l'année courante
+    $annee_actuelle = date('Y');
+    
+    // Retourner l'année dans un message de copyright
+    return '&copy; ' . $annee_actuelle;
+}
+
+// Création du shortcode [copyright_year] qui affiche l'année courante
+add_shortcode('copyright_year', 'afficher_copyright_annee');
+
 }
