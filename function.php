@@ -1,14 +1,15 @@
 <?php
 
 /*
-Plugin Name: Yetinc Short Code
-Plugn URL : https://yetinc.ch 
-Description: Ajoute des shortcodes personnalisés pour Woocommmerce et Wordpress et l'affichage de ses données
+Plugin Name: Yetinc Shortcodes for WooCommerce
+Description: Ajoute des shortcodes personnalisés pour WooCommerce et WordPress et l'affichage de ses données.
+
 Version: 1.1.2
 Author: Yetinc Sàrl
 Author URI: https://yetinc.ch 
-Update URI: https://yetinc.ch 
-Text domain: Yetinc Short Code by Coding Manufactory
+Plugin URI: https://github.com/yeticn/Woo-Short-Code
+GitHub Plugin URI: yeticn/Woo-Short-Code
+Text Domain: yetinc-short-code
 */
 
 // Afficher le nom de l'utilisateur connecté ou un lien de connexion avec un shortcode
