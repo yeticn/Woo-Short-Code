@@ -2,7 +2,7 @@
 
 /*
 Plugin Name: Yetinc Shortcodes for WooCommerce
-Description: Ajoute des shortcodes personnalisés pour WooCommerce et WordPress et l'affichage de ses données ainsi qu'un arrondi de TVA pour les shops en Suisse.
+Description: Ajoute des shortcodes personnalisés pour WooCommerce et WordPress et l'affichage de ses données
 
 Version: 1.1.3
 Author: Yetinc Sàrl
@@ -60,27 +60,6 @@ function afficher_date_expedition() {
 // Création du shortcode pour afficher le texte "Expédié avant le ..."
 add_shortcode('expedition_date', 'afficher_date_expedition');
 
-// Ajouter une fonction de round TVA pour les shops en Suisse.
-add_filter( 'woocommerce_cart_tax_total', 'round_subtotal', 10, 3);
-add_filter( 'woocommerce_get_price_excluding_tax', 'round_price_product', 10, 1 );
-add_filter( 'woocommerce_get_price_including_tax', 'round_price_product', 10, 1 );
-add_filter( 'woocommerce_tax_round', 'round_price_product', 10, 1);
-add_filter( 'woocommerce_product_get_price', 'round_price_product', 10, 1);
-add_filter( 'woocommerce_calculated_total', 'round_price_product', 10, 1);
-add_filter( 'woocommerce_calculated_subtotal', 'round_price_product', 10, 1);
-add_filter( 'woocommerce_cart_subtotal', 'round_subtotal', 10, 3);
- 
-function round_subtotal( $cart_subtotal, $compound, $instance ) {
-$origValue = $cart_subtotal;
-preg_match( '/\d+\.\d+/', $origValue, $floatValue);
-$roundedValue = number_format( round_price_product( $floatValue[0] ), 2 );
-$returnValue = str_replace( $floatValue, $roundedValue, $origValue );
-return $returnValue;
-}
-function round_price_product( $price ){
-// Return rounded price
-return round( $price * 2, 1 ) / 2;
-
 // Fonction pour afficher l'année actuelle
 function afficher_copyright_annee() {
     // Récupérer l'année courante
@@ -93,4 +72,4 @@ function afficher_copyright_annee() {
 // Création du shortcode [copyright_year] qui affiche l'année courante
 add_shortcode('copyright_year', 'afficher_copyright_annee');
 
-}
+?>
